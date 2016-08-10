@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress Bars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-touch.js"></script>
+</head>
+<body>
+    <div id="progress_container" class="container" ng-app="progressBar" ng-controller="displayController">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Dynamic JavaScript Progress Bar</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="myProgress" ng-repeat="displaybarValue in displayBars">
+                            <div ng-style="{'width': displaybarValue.pCentForWidth + '%'}" ng-model="displaybarValue[$index].str" id="{{createBarId($index)}}" class="bar">
+                                <span class="progress-text">{{displaybarValue.pCentToShow}}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-md-4 col-sm-2 col-xs-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <select class="form-control" ng-model="selectedBar">
+                                    <option value="">Select bar</option>
+                                    <option value="{{$index}}" ng-repeat="bar in displayBars">{{ createOptionText($index)}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-10 col-xs-8">
+                        <div ng-repeat="buttonValue in displayButtons">
+                            <button ng-click="btnClick(createBarId(selectedBar),buttonValue.str,selectedBar)" class="button" type="button" title="{{buttonValue.str}}" value="{{buttonValue.str}}">{{buttonValue.str}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+    <script src="js/progressBarApp.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+</html>

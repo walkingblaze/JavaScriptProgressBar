@@ -1,0 +1,28 @@
+.container .myProgress {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd; }
+  .container .myProgress .bar {
+    height: 100%;
+    background-color: #4CAF50; }
+    .container .myProgress .bar .progress-text {
+      color: #000000;
+      text-align: center;
+      font-size: 1em;
+      font-weight: bold;
+      position: absolute;
+      top: 20%;
+      left: 50%; }
+
+.button {
+  width: 60px;
+  float: left;
+  margin-left: 10px;
+  text-align: center; }
+
+.top-buffer {
+  margin-top: 20px; }
+
+/*# sourceMappingURL=style.css.map */
